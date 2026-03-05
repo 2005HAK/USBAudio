@@ -1,0 +1,1 @@
+sudo apt install libpulse-dev build-essential -y
