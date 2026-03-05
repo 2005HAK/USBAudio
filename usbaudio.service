@@ -1,0 +1,18 @@
+[Unit]
+Description=Servidor de Audio USB para o Tablet
+After=pulseaudio.service pipewire-pulse.service
+
+[Service]
+# O caminho exato onde guardámos o programa
+ExecStart=/home/hak/.local/bin/USBAudio/run.sh
+
+# Se o programa falhar por algum motivo, o Linux reinicia-o após 3 segundos
+Restart=always
+RestartSec=3
+
+# Como é um programa de rede/áudio de baixo nível, limitamos as mensagens
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=default.target 
